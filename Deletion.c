@@ -48,7 +48,20 @@ struct node* deleteAtlast(struct node* head)
     free(q);
     return head;
 }
-
+//Case 4: Deleting the element with a given value from the linked list
+struct node* deletevalue(struct node* head, int value)
+{
+    struct node* p=head;
+    struct node* q=head->next;
+    while(q->data!=value && q->next!=NULL)
+    {
+        p=p->next;
+        q=q->next;
+    }
+    p->next=q->next;
+    free(q);
+    return head;
+}
 int main()
 {
     //Declaring Nodes
@@ -85,6 +98,5 @@ int main()
     head=deletefirst(head);
     printf("Linked list after deletion\n");
     Linkedlisttraversal(head);
-
     return 0;
 }
