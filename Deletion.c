@@ -58,8 +58,11 @@ struct node* deletevalue(struct node* head, int value)
         p=p->next;
         q=q->next;
     }
-    p->next=q->next;
-    free(q);
+    if(q->data==value)
+    {
+        p->next=q->next;
+        free(q);
+    }
     return head;
 }
 int main()
