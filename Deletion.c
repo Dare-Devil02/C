@@ -36,6 +36,19 @@ struct node* deleteatindex(struct node* head,int index){
     return head;
 }
 //case 3 : Deleting last element 
+struct node* deleteAtlast(struct node* head)
+{
+    struct node *p=head;
+    struct node *q=head->next;
+    while(q->next!=NULL)
+    {
+        p=p->next;
+        q=q->next;
+    }
+    p->next=NULL;
+    free(q);
+    return head;
+}
 
 int main()
 {
