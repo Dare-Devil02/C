@@ -5,7 +5,6 @@ struct node{
     int data;
     struct node* next;
 };
-
 //Function for traversal
 void Linkedlisttraversal(struct node* ptr)
 {
@@ -83,7 +82,6 @@ int main()
 
     printf("Linked list before deletion\n");
     Linkedlisttraversal(head);
-
     head=deletefirst(head);
     printf("Linked list after deletion\n");
     Linkedlisttraversal(head);
