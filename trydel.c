@@ -53,6 +53,7 @@ int main()
     printf("Linked LIst before deletion\n");
     linkedlisttraversal(head);
     head=deletefirst(head);
+    head=deleteAtIndex(head,3);
     printf("Linked list after deletion\n");
     linkedlisttraversal(head);
 }
