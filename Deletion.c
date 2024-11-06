@@ -89,7 +89,7 @@ int main()
     head->next = second;
 
     // Link second and third nodes
-    second->data = 3;
+    second->data = 3; 
     second->next = third;
 
     // Link third and fourth nodes
@@ -103,7 +103,7 @@ int main()
     printf("Linked list before deletion\n");
     linkedListTraversal(head);
 
-    head = deleteFirst(head); // For deleting first element of the linked list
+    head = deleteFirst(head); // For  deleting first element of the linked list
     head = deleteAtIndex(head, 2);
     head = deleteAtLast(head);
     printf("Linked list after deletion\n");
