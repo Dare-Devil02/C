@@ -30,6 +30,36 @@ struct Node* insertatfirst(struct Node* head, int data)
     head=ptr;
     return head;
 }
+
+//Insert in between
+struct Node* insertinbetween(struct Node* head, int value, int index)
+{
+    struct Node* ptr=(struct Node*)malloc(sizeof(struct Node));
+    struct Node* p=head;
+    int i=0;
+    while(i!=index-1)
+    {
+        p=p->next;
+        i++;
+    }
+    ptr->data=value;
+    ptr->next=p->next;
+    p->next=ptr;
+    return head;
+}
+struct Node* insertatend(struct Node* head, int value)
+{
+    struct Node* ptr=(struct Node*)malloc(sizeof(struct Node));
+    struct Node* p=head;
+    ptr->data=value;
+    do
+    {
+        p=p->next;
+    } while (p->next!=head);
+    ptr->next=p->next;
+    p->next=ptr;
+    return head;
+}
 int main()
 {
     struct Node* head=(struct Node*)malloc(sizeof(struct Node));
@@ -48,6 +78,8 @@ int main()
     printf("List before insertion\n");
     clltraverse(head);
     head=insertatfirst(head,18);
+    head=insertinbetween(head,45,2);
+    head=insertatend(head,76);
     printf("\nList after insertion\n");
     clltraverse(head);
 }
