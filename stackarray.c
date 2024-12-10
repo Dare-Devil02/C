@@ -60,6 +60,7 @@ void push()
         scanf("%d",&val);
         top+=1;
         stack[top]=val;
+        printf("Value Pushed");
     }
 }
 void pop()
@@ -68,6 +69,7 @@ void pop()
         printf("Stack Underflow");
     else
         top-=1;
+        printf("Value Popped");
 }
 void show()
 {
